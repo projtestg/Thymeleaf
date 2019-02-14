@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- <h1>Hello World</h1> -->
+	<!-- 1. 컨트롤러에서 템플릿으로 값 전달 -->
+	<!-- <p class="msg" th:text="${msg}"></p> -->
+	
+	<!-- 2. 폼 사용하기 -->
+	<!-- <p class="msg" th:text="${msg}">wait.</p>
+	<form method="POST" action="/">
+		<input type="text" name="id1" th:value="${id2}" />
+		<input type="submit" value="Click" />
+	</form> -->
+	
+	<!-- 3. redirect, forward -->
+	<!-- <h1>Hello World</h1> -->
+	
+	<!-- OGNL -->
+	<p th:text="${new java.util.Date().toString()}"></p>
+	
+	<!-- utility object -->
+	<p th:text="${#dates.format(new java.util.Date(), 'yyyy-MM-dd HH:mm')}"></p>
+	<p th:text="${#numbers.formatInteger(123,5)}"></p>
+	<p th:text="${#strings.toUpperCase('Welcome to Spring Boot')}"></p>
+	
+	<!-- parameter -->
+	<!-- http://localhost:8080/?id=hello&id=world -->
+	<p th:text="'id0 = ' + ${param.id[0]} + ', id1 = ' + ${param.id[1]}"></p>
+	
+	
+</body>
+</html>
